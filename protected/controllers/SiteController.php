@@ -2,6 +2,16 @@
 
 class SiteController extends Controller
 {
+    public function filters()
+    {
+        return array(
+            array(
+                'application.filters.AccessLogFilter - error',
+                'logFile'=>Yii::getPathOfAlias('webroot') . '/logAccess.txt',
+            ),
+        );
+    }
+
 	/**
 	 * Declares class-based actions.
 	 */
